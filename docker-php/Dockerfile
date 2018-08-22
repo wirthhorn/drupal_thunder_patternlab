@@ -7,12 +7,7 @@ RUN set -ex; \
 		a2enmod rewrite; \
 	fi; \
 	\
-	savedAptMark="$(apt-mark showmanual)"; \
-	\
-	apt-get update; \
-	apt-get install -y --no-install-recommends \
-        # gettext-dev \
-        # icu-dev \
+	apt-get update -y && apt-get install -y --no-install-recommends \
         git \
         libicu-dev \
 		libjpeg-dev \
@@ -20,6 +15,8 @@ RUN set -ex; \
 		libpq-dev \
         zip \
 	; \
+	\
+	savedAptMark="$(apt-mark showmanual)"; \
 	\
 	docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr; \
     docker-php-ext-configure intl; \

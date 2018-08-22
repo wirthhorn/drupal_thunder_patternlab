@@ -18,4 +18,4 @@ RUN apt-get update && \
 # Permissions required by Yeoman to run: https://github.com/keystonejs/keystone/issues/1566#issuecomment-217736880
 RUN chmod g+rwx /root /root/.config /root/.config/configstore
 
-EXPOSE 3001 3050
+EXPOSE 3000 3050

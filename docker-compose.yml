@@ -77,7 +77,7 @@ services:
       dockerfile: Dockerfile
    container_name: "${PROJECT_NAME}_node-php-composer"
    ports:
-     - "3050:3050"
+     - "3050:3000"
      - "3001:3001"
    tty: true
    volumes_from:
